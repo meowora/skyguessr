@@ -1,5 +1,6 @@
 import { Viewer } from "@photo-sphere-viewer/core";
 import { CubemapAdapter } from "@photo-sphere-viewer/cubemap-adapter";
+import { EXTRA_LOCATIONS } from "./extra.js";
 
 function cubemap(folder) {
   return {
@@ -20,26 +21,14 @@ const LOCATIONS = [
   { folder: "scene1", x: -53, z: 67, hint: "Scene 1" },
   { folder: "scene2", x: -703, z: -8, hint: "Scene 2" },
   { folder: "scene3", x: -303, z: -250, hint: "Scene 3" },
-  { folder: "3b63f23c-e87a-4e9d-ab7f-5f0f611c2f1b", x: -24, z: -602, hint: "Scene 4" },
   { folder: "scene5", x: 209, z: -260, hint: "Scene 5" },
   { folder: "scene6", x: -79, z: -20, hint: "Scene 6" },
   { folder: "scene7", x: -351, z: -168, hint: "Scene 7" },
-  { folder: "0c3841d6-1a36-44cb-bff3-d705b5ac1446", x: -231, z: -200, hint: "Scene 8" },
   { folder: "scene9", x: 253, z: -475, hint: "Scene 9" },
-  { folder: "0ac1c0df-cf5c-444b-b98a-52125a6d01d9", x: -6, z: -794, hint: "meow" },
-  { folder: "25c9294c-055f-4a50-a208-020231eaecaa", x: -683, z: 81, hint: "meow" },
-  { folder: "485fd19c-e005-464d-a2d4-beccfb4747bc", x: -49, z: -195, hint: "meow" },
-  { folder: "884f1e7a-2b83-4770-a835-e7b7b336960a", x: 19, z: -582, hint: "meow" },
-  { folder: "c47216eb-339b-4613-9375-39eebe20514d", x: -541, z: -890, hint: "meow" },
-  { folder: "db9b4bbb-c0b0-4d0e-bb19-3473d38e20ae", x: 116, z: -36, hint: "meow" },
-  { folder: "3e3fa9c1-1211-478a-b09a-e928b1748db6", x: -629, z: -88, hint: "meow" },
-  { folder: "17543a72-b24c-492d-a116-3d0497f5c9b0", x: 60, z: 5, hint: "meow" },
-  { folder: "429c8ffc-d51f-477a-9020-36cb29ba460b", x: -671, z: -276, hint: "meow" },
-  { folder: "3b59ac06-394d-48f4-807c-5406a0fd0436", x: -586, z: -2, hint: "meow" },
-  { folder: "cc9920d5-3333-4378-9454-fbded471d3a8", x: -81, z: -134, hint: "meow" },
+  ...EXTRA_LOCATIONS,
 ];
 
-const ROUNDS_PER_GAME = 10;
+const ROUNDS_PER_GAME = 5;
 
 function pickRounds(count) {
   const pool = LOCATIONS.slice();
@@ -54,12 +43,24 @@ function pickRounds(count) {
   //   console.warn(`Only ${picked.length} locations available — add more to LOCATIONS for ${count} rounds per game.`);
   // }
 
-  return picked.map((loc) => ({
-    cubemap: cubemap(loc.folder),
-    x: loc.x,
-    z: loc.z,
-    hint: loc.hint,
-  }));
+  const fromPos = (coords) => {
+    const separator = coords.indexOf(";");
+    return {
+      x: coords.substring(0, separator),
+      z: coords.substring(separator + 1),
+    };
+  };
+
+  return picked.map((loc) => {
+    const { x, z } = loc.coords ? fromPos(loc.coords) : loc;
+
+    return {
+      cubemap: cubemap(loc.folder),
+      x: x,
+      z: z,
+      hint: loc.hint,
+    };
+  });
 }
 
 let ROUNDS = [];

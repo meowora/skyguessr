@@ -1,0 +1,28 @@
+// DO NOT EDIT, THIS FILE IS GENERATED
+
+export const EXTRA_LOCATIONS = [
+  { folder: "3e3fa9c1-1211-478a-b09a-e928b1748db6", coords: "-629;-88", hint: "meow" },
+  { folder: "485fd19c-e005-464d-a2d4-beccfb4747bc", coords: "-49;-195", hint: "meow" },
+  { folder: "17543a72-b24c-492d-a116-3d0497f5c9b0", coords: "60;5", hint: "meow" },
+  { folder: "429c8ffc-d51f-477a-9020-36cb29ba460b", coords: "-671;-276", hint: "meow" },
+  { folder: "25c9294c-055f-4a50-a208-020231eaecaa", coords: "-683;81", hint: "meow" },
+  { folder: "0ac1c0df-cf5c-444b-b98a-52125a6d01d9", coords: "-6;-794", hint: "meow" },
+  { folder: "3b59ac06-394d-48f4-807c-5406a0fd0436", coords: "-586;-2", hint: "meow" },
+  { folder: "1137621c-bbfe-48a6-8e2e-b4c4814800dc", coords: "182;-382", hint: "meow" },
+  { folder: "aba8772e-0457-471f-a7cb-bba620d96dae", coords: "261;-565", hint: "meow" },
+  { folder: "884f1e7a-2b83-4770-a835-e7b7b336960a", coords: "19;-582", hint: "meow" },
+  { folder: "69f9f80d-592f-41e0-83da-ed1eee4d50a0", coords: "-8;-396", hint: "meow" },
+  { folder: "c47216eb-339b-4613-9375-39eebe20514d", coords: "-541;-890", hint: "meow" },
+  { folder: "db9b4bbb-c0b0-4d0e-bb19-3473d38e20ae", coords: "116;-36", hint: "meow" },
+  { folder: "97b02426-1183-4801-bb68-35657cbbdeca", coords: "268;-496", hint: "meow" },
+  { folder: "f5e848ee-54dc-47dd-ad7e-5eb63916c63b", coords: "-186;-321", hint: "meow" },
+  { folder: "258bdaba-e2f4-4c0f-bd4a-32293e94ac76", coords: "104;-283", hint: "meow" },
+  { folder: "3b63f23c-e87a-4e9d-ab7f-5f0f611c2f1b", coords: "-23;-601", hint: "meow" },
+  { folder: "37cb599e-6457-41f9-9ce0-5b722a71e727", coords: "-702;0", hint: "meow" },
+  { folder: "55046e15-4a62-4075-8d2c-bfe22dd2f02f", coords: "-336;63", hint: "meow" },
+  { folder: "0c3841d6-1a36-44cb-bff3-d705b5ac1446", coords: "-231;-200", hint: "meow" },
+  { folder: "fb923baa-4718-4491-b48b-3af49b6c437e", coords: "-305;-33", hint: "meow" },
+  { folder: "cc9920d5-3333-4378-9454-fbded471d3a8", coords: "-81;-134", hint: "meow" },
+  { folder: "08936e9a-9957-4187-ba51-9c3a96d3cfa9", coords: "123;177", hint: "meow" },
+  { folder: "d469f030-f7a4-4d07-9784-2ffb1a4d7f02", coords: "-463;-81", hint: "meow" },
+];
